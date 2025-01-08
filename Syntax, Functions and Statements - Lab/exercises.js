@@ -101,3 +101,19 @@ console.log(result);
 operation(5,6,'+');
 operation(3, 5.5, '*');
 
+// 06. Sum of Numbers N…M
+
+function sumRange(n,m){
+    let number1 = Number(n);
+    let number2 = Number(m);
+    let result = 0;
+
+    for (let index = number1; index <= number2; index++) {
+        result += index;
+        
+    }
+
+    return result;
+}
+
+console.log(sumRange('3','5'));

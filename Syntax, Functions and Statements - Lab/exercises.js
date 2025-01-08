@@ -142,3 +142,13 @@ function dayOfWeek(day){
 }
 
 console.log(dayOfWeek('Monday'));
+
+// 08. Days in a month
+
+function getDaysInMonth(month, year) {
+   
+    const date = new Date(year, month, 0); 
+    return date.getDate(); 
+}
+
+console.log(getDaysInMonth(2, 2023));

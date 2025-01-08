@@ -60,3 +60,44 @@ function solve(input) {
         console.log(`We can not calculate the circle area, because we receive a ${inputType}.`)
     }
 }
+
+// 05. Math Operations 
+
+function operation(number1, number2, operation){
+    switch (operation) {
+        case '+':
+            result = number1 + number2;
+            break;
+        case '-':
+            result = number1 - number2;
+            break;
+        case '*':
+            result = number1 * number2;
+            break;
+        case '/':
+            if (number2 !== 0) {
+                result = number1 / number2;
+            } else {
+                return "Cannot divide by ZERO";
+            }
+            break;
+        case '%':
+            if (number2 !== 0) {
+                result = number1 % number2;
+            } else {
+                return "Cannot divide by ZERO";
+            }
+            break;
+        case '**':
+            result = number1 ** number2;
+            break;
+        default:
+            return "Error: Invalid operator";
+    }
+
+console.log(result);
+}
+
+operation(5,6,'+');
+operation(3, 5.5, '*');
+

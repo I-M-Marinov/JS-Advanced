@@ -24,3 +24,24 @@ function solve(arr1, arr2, arr3){
     console.log(averageLength);
 
 }
+
+// 03. Largest Number
+
+function solve(num1, num2, num3) {
+    let result;
+
+    switch (true) {
+        case num1 > num2 && num1 > num3:
+            result = `The largest number is ${num1}.`;
+            break;
+        case num2 > num1 && num2 > num3:
+            result = `The largest number is ${num2}.`;
+            break;
+        case num3 > num1 && num3 > num2:
+            result = `The largest number is ${num3}.`;
+            break;
+        default:
+            result = "The numbers are equal or there's no single largest number.";
+    }
+    console.log(result);
+}

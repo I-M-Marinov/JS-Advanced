@@ -174,3 +174,18 @@ function drawRectangle(number) {
 }
 
 console.log(drawRectangle(6));
+
+// 10. Aggregate Elements
+
+function arrayOperations(arr) {
+
+    const sum = arr.reduce((acc, val) => acc + val, 0);
+    const inverseSum = arr.reduce((acc, val) => acc + 1 / val, 0);
+    const concatenation = arr.reduce((acc, val) => acc + val.toString(), "");
+  
+    console.log(sum);
+    console.log(inverseSum);
+    console.log(concatenation);
+  }
+
+  arrayOperations([1, 2, 3]);

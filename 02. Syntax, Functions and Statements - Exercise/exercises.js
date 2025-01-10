@@ -163,3 +163,65 @@ checkSpeed(40, 'city');
 checkSpeed(21, 'residential');      
 checkSpeed(120, 'interstate'); 
 checkSpeed(200, 'motorway'); 
+
+// 07. Cooking by Numbers 
+
+// Write a program that receives 6 parameters which are a number and a list of five operations. 
+// Perform the operations sequentially by starting with the input number and using the result of every operation as a starting point for the next one. 
+// Print the result of every operation in order. The operations can be one of the following:
+// •	chop - divide the number by two
+// •	dice - square root of a number
+// •	spice - add 1 to the number
+// •	bake - multiply number by 3
+// •	fillet - subtract 20% from the number
+// The input comes as 6 string elements. The first element is the starting point and must be parsed to a number. 
+// The remaining 5 elements are the names of the operations to be performed.
+// The output should be printed on the console.
+
+
+function performOperations(input, op1, op2, op3, op4, op5) {
+
+  let number = Number(input);
+
+  function chop(num) {
+      return num / 2;
+  }
+  function dice(num) {
+      return Math.sqrt(num);
+  }
+  function spice(num) {
+      return num + 1;
+  }
+  function bake(num) {
+      return num * 3;
+  }
+  function fillet(num) {
+      return (num * 0.8).toFixed(1); 
+  }
+
+  const operations = [op1, op2, op3, op4, op5];
+
+  for (let operation of operations) {
+      switch (operation) {
+          case "chop":
+              number = chop(number);
+              break;
+          case "dice":
+              number = dice(number);
+              break;
+          case "spice":
+              number = spice(number);
+              break;
+          case "bake":
+              number = bake(number);
+              break;
+          case "fillet":
+              number = fillet(number);
+              break;
+      }
+      console.log(number);
+  }
+}
+
+performOperations('32', 'chop', 'chop', 'chop', 'chop', 'chop');
+performOperations('9', 'dice', 'spice', 'chop', 'bake', 'fillet');

@@ -77,3 +77,37 @@ function checkDigits(number) {
   getPreviousDay(2016, 9, 30);
   getPreviousDay(2015, 5, 10);
   getPreviousDay(2015, 1, 1);
+
+  // 05. Time to Walk
+
+// Write a function that calculates how long it takes a student to get to university. 
+// The function takes three numbers:
+// •	The first is the number of steps the student takes from their home to the university
+// •	The second number is the length of the student's footprint in meters
+// •	Тhe third number is the student speed in km/h
+// Every 500 meters the student rests and takes a 1-minute break.
+// Calculate how long the student walks from home to university and print on the console the result in the following format: `hours:minutes:seconds`.
+// The input comes as three numbers.
+// The output should be printed on the console.
+
+function calculateTime(steps, lengthOfFootprint, speedInKmH) {
+
+    let speedInMS = speedInKmH * 5 / 18;
+    let distanceInMeters = lengthOfFootprint * steps;
+    let timeInSeconds = distanceInMeters / speedInMS;
+
+    let  breaks = Math.floor(distanceInMeters / 500);
+    let breakTimeInSeconds = breaks * 60;
+    let totalTimeInSeconds = timeInSeconds + breakTimeInSeconds;
+
+
+    let hours = Math.floor(totalTimeInSeconds / 3600);
+    let minutes = Math.floor((totalTimeInSeconds % 3600) / 60);
+    let seconds = Math.round(totalTimeInSeconds % 60);
+
+    console.log(`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+
+}
+
+calculateTime(4000, 0.60, 5);
+calculateTime(2564, 0.70, 5.5);

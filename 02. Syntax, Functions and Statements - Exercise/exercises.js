@@ -240,7 +240,7 @@ performOperations('9', 'dice', 'spice', 'chop', 'bake', 'fillet');
 // For each comparison print either `{x1, y1} to {x2, y2} is valid` if the distance is valid, or `{x1, y1} to {x2, y2} is invalid` if it is invalid.
 
 function checkDistances(x1, y1, x2, y2) {
-  
+
   function isValidDistance(x1, y1, x2, y2) {
     const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
     return Number.isInteger(distance);
@@ -267,3 +267,17 @@ function checkDistances(x1, y1, x2, y2) {
 
 checkDistances(3, 0, 0, 4);
 checkDistances(2, 1, 1, 1);
+
+
+// 09. Words Uppercase 
+
+function extractAndConvertToUpperCase(text) {
+
+  const words = text.match(/\w+/g); // regular expression
+  const upperCaseWords = words.map(word => word.toUpperCase());
+  console.log(upperCaseWords.join(", "));
+}
+
+extractAndConvertToUpperCase('Hi, how are you?'); 
+extractAndConvertToUpperCase('hello'); 
+

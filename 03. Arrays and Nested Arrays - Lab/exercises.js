@@ -89,3 +89,25 @@ function negativeAndPositiveNumbers(input) {
 
 negativeAndPositiveNumbers([7, -2, 8, 9]); 
 negativeAndPositiveNumbers([3, -2, 0, -1]); 
+
+// 05. Smallest Two Numbers
+
+// Write a function that prints the two smallest elements from an array of numbers.
+// The input comes as an array of number elements.
+// The output is printed on the console on a single line, separated by space.
+
+function smallestTwoNumbers(input){
+    
+    let sortedArray = input.sort((a, b) => b - a);
+
+    let firstNumber = sortedArray.pop();
+    let secondNumber = sortedArray.pop();
+
+    return `${firstNumber} ${secondNumber}`;
+
+}   
+
+console.log(smallestTwoNumbers([30, 15, 50, 5]));
+console.log(smallestTwoNumbers([3, 0, 10, 4, 7, 3]));
+
+

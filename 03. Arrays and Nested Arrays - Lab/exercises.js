@@ -97,7 +97,7 @@ negativeAndPositiveNumbers([3, -2, 0, -1]);
 // The output is printed on the console on a single line, separated by space.
 
 function smallestTwoNumbers(input){
-    
+
     let sortedArray = input.sort((a, b) => b - a);
 
     let firstNumber = sortedArray.pop();
@@ -109,5 +109,35 @@ function smallestTwoNumbers(input){
 
 console.log(smallestTwoNumbers([30, 15, 50, 5]));
 console.log(smallestTwoNumbers([3, 0, 10, 4, 7, 3]));
+
+// 06. Bigger Half
+
+// You are given an array of numbers. Write a JS function that sorts the array in ascending order and returns a new array, 
+// containing only the second half of the input. 
+// If there is an odd number of elements in the input, always take the bigger half. For example,
+//  if the input array contains 4 elements, the output should be 2, and if the input is 5 – the output is 3.
+// The input comes as an array of number elements.
+// The output is the return value of the function and should be an array of numbers.
+
+function biggerHalf(input){
+
+    let sortedArray = input.sort((a, b) => a - b);
+    let resultArray = [];
+    let numberOfElements = 0;
+
+    if(sortedArray.length % 2 == 0){
+        numberOfElements = sortedArray.length / 2; 
+         resultArray = sortedArray.splice(numberOfElements, sortedArray.length-1);
+
+    } else{
+        numberOfElements = Math.floor((sortedArray.length / 2) + 1);
+         resultArray = sortedArray.splice(numberOfElements-1, sortedArray.length-1);
+
+    }
+    return resultArray;
+}   
+
+console.log(biggerHalf([4, 7, 2, 5]));
+console.log(biggerHalf([3, 19, 14, 7, 2, 19, 6]));
 
 

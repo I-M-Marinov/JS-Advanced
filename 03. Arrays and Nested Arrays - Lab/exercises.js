@@ -44,3 +44,23 @@ function numbersSequence(n, k) {
 
 console.log(numbersSequence(6, 3)); 
 console.log(numbersSequence(8, 2)); 
+
+// 03. Sum First Last
+
+// Write a function that calculates and returns the sum of the first and the last elements in an array.
+// The input comes as an array of string elements holding numbers.
+// The output is the return value of your function and should be a number.
+
+function sumFirstAndLast(input){
+
+    let inputArray = [...input]; 
+
+    let firstNumber = Number(inputArray.shift()); 
+    let lastNumber = Number(inputArray.pop()); 
+
+    return firstNumber + lastNumber;
+}
+
+console.log(sumFirstAndLast(['20', '30', '40']));
+console.log(sumFirstAndLast(['5', '10']));
+

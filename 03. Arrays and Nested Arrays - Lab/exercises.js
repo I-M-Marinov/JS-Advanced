@@ -221,8 +221,15 @@ console.log(biggestElement([[3, 5, 7, 12],[-1, 4, 33, 2],[8, 3, 0, 4]]));
 
 // 10. Diagonal Sums 
 
+// A square matrix of numbers comes as an array of arrays, each array holding numbers. 
+// Write a function that finds the sum at the main and the secondary diagonals.
+// The input comes as an array of arrays, containing number elements (2D matrix of numbers).
+// The output is printed on the console, on a single line separated by space. 
+// First print the sum at the main diagonal, then the sum at the secondary diagonal.
+
+
 function diagonalSums(matrix){
-    
+
     let mainDiagonalSum = 0;
     let secondaryDiagonalSum = 0;
 
@@ -242,3 +249,41 @@ diagonalSums([[3, 5, 17],
    diagonalSums([[20, 40],
                  [10, 60]]
                );
+
+// 11. Equal Neighbors
+
+// Write a function that finds the number of equal neighbor pairs inside a matrix of variable size and type (numbers or strings).
+// The input comes as an array of arrays, containing string elements (2D matrix of strings).
+// The output is the return value of your function. Save the number of equal pairs you find and return it.
+
+
+function countEqualNeighbors(matrix) {
+    let equalPairs = 0;
+
+    for (let row = 0; row < matrix.length; row++) {
+
+        for (let col = 0; col < matrix[row].length; col++) {
+
+            if (col + 1 < matrix[row].length && matrix[row][col] === matrix[row][col + 1]) {
+                equalPairs++;
+            }
+
+            if (row + 1 < matrix.length && matrix[row][col] === matrix[row + 1][col]) {
+                equalPairs++;
+            }
+        }
+    }
+
+    return equalPairs;
+}
+
+console.log(countEqualNeighbors([['2', '3', '4', '7', '0'],
+                                 ['4', '0', '5', '3', '4'],
+                                 ['2', '3', '5', '4', '2'],
+                                 ['9', '8', '7', '5', '4']]
+                               ));
+                               
+console.log(countEqualNeighbors([['test', 'yes', 'yo', 'ho'],
+                                 ['well', 'done', 'yo', '6'],
+                                 ['not', 'done', 'yet', '5']]
+                               ));

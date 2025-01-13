@@ -186,12 +186,31 @@ console.log(extractSubset([1,
                            2, 
                            24]
                           ));
-                          
+
 console.log(extractSubset([20, 
                             3, 
                             2, 
                             15,
                             6, 
                             1]
-                         ));
+                         ));6
+
+// 06. List Of Names
+
+// You will receive an array of names. 
+// Sort them alphabetically in ascending order and print a numbered list of all the names, each on a new line.
+
+function listOfNames(array){
+    let result = '';
+    array.sort((a, b) => a.localeCompare(b));
+
+    for (let i = 0; i < array.length; i++) {
+        result += `${i + 1}.${array[i]}\n`;
+        
+    }
+
+   return result;
+};
+
+console.log(listOfNames(["John", "Bob", "Christina", "Ema"]));
 

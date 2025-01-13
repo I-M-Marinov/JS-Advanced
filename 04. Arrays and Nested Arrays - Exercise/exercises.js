@@ -214,3 +214,33 @@ function listOfNames(array){
 
 console.log(listOfNames(["John", "Bob", "Christina", "Ema"]));
 
+// 07. Sorting Numbers
+
+// Write a function that sorts an array of numbers so that the first element is the smallest one,
+//  the second is the biggest one, the third is the second smallest one, the fourth is the second biggest one, and so on. 
+// Return the resulting array.
+
+function sortingNumbers(array){
+    let resultArray = [];
+
+    array.sort((a,b) => a - b);
+
+    while (array.length > 0) {
+
+        let currentMin = array.shift();
+        resultArray.push(currentMin);
+        
+        if (array.length > 0) {
+            let currentMax = array.pop();
+            resultArray.push(currentMax);
+        }
+    }
+
+    return resultArray;
+
+}
+
+console.log(sortingNumbers([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]));
+console.log(sortingNumbers([22, 9, 63, 3, 2, 19, 54, 11, 21, 18]));
+
+

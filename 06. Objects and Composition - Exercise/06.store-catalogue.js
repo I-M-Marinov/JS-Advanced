@@ -29,13 +29,14 @@ function solve(inputArray){
     const grouped = sortedProducts.reduce((acc, product) => {
 
         const name = product.split(' : ')[0];
+        const price = product.split(' : ')[1];
         const firstLetter = name[0].toUpperCase();
 
         if (!acc[firstLetter]) {
             acc[firstLetter] = [];
         }
 
-        product = `${product.split(' : ')[0]}: ${product.split(' : ')[1]}`
+        product = `${name}: ${price}`
 
         acc[firstLetter].push(product);
 

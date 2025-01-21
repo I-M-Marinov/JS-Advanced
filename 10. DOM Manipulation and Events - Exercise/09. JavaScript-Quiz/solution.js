@@ -16,7 +16,7 @@ function solve() {
   const answers = document.querySelectorAll('.quiz-answer');
   
     for (let i = 0; i < sections.length; i++) {
-      sections[i].style.display = i === 0 ? '' : 'none';
+      sections[i].style.display = i === 0 ? '' : '';
     }
 
     for (let i = 0; i < answers.length; i++) {

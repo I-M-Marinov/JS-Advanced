@@ -5,10 +5,18 @@
 // that has its first three parameters fixed and only takes one parameter.
 
 
+// ----------------------Alternative solution--------------------
+// function createFormatter(separator, symbol, symbolFirst, formatter) {
+//     return function (value) {
+//         return formatter(separator, symbol, symbolFirst, value);
+//     };
+// }
 
 function createFormatter(separator, symbol, symbolFirst, formatter) {
     return function (value) {
-        return formatter(separator, symbol, symbolFirst, value);
+        
+        return formatter.call(null, separator, symbol, symbolFirst, value);
+        
     };
 }
 

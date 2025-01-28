@@ -1,19 +1,19 @@
 function solve() {
+
     const [movieNameInput, hallInput, ticketPriceInput] = document.querySelectorAll('#container input');
     const onScreenButton = document.querySelector('#container button');
     const moviesList = document.querySelector('#movies ul');
     const archiveList = document.querySelector('#archive ul');
     const clearButton = document.querySelector('#archive button');
 
-
     onScreenButton.addEventListener('click', (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
 
         const movieName = movieNameInput.value.trim();
         const hall = hallInput.value.trim();
         const ticketPrice = parseFloat(ticketPriceInput.value.trim());
 
-        if (!movieName || !hall || isNaN(ticketPrice) || ticketPrice < 1) {
+        if (movieName === '' || hall === '' || ticketPriceInput.value.trim() === '' || isNaN(ticketPrice) || ticketPrice <= 0) {
             return;
         }
 
@@ -52,13 +52,17 @@ function solve() {
         ticketPriceInput.value = '';
 
         archiveButton.addEventListener('click', () => {
-            const ticketsSold = input.value;
 
-            if (!ticketsSold || !Number.isInteger(Number(ticketsSold)) || Number(ticketsSold) < 0) {
-                return; 
+            if(isNaN(input.value.trim())){
+                return;
             }
+            const ticketsSold = parseInt(input.value.trim());
 
-            const totalProfit = Number(ticketsSold) * ticketPrice;
+            if (input.value.trim() === '' || ticketsSold < 0) {
+                return;
+            }
+            
+            const totalProfit = Number(ticketsSold) * parseFloat(ticketPrice);
 
             const archiveLi = document.createElement('li');
 
@@ -86,8 +90,6 @@ function solve() {
     });
 
     clearButton.addEventListener('click', () => {
-        archiveList.innerHTML = '';
+        archiveList.innerHTML = ''; 
     });
 }
-
- 

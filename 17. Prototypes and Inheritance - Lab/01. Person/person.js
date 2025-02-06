@@ -30,6 +30,8 @@ function createPerson(firstName, lastName){
     return new Person(firstName, lastName);
 }
 
+/* FIRST EXAMPLE USAGE */
+
 let person = createPerson("Peter", "Ivanov");
 
 console.log(person.fullName); // Peter Ivanov
@@ -43,4 +45,19 @@ person.fullName = "Nikola Tesla";
 
 console.log(person.firstName); // Nikola
 console.log(person.lastName); // Tesla
+
+console.log(`----------------------------------------------------------------------`); 
+
+/* SECOND EXAMPLE USAGE */
+
+let person2 = createPerson("Albert", "Simpson");
+
+console.log(person2.fullName); // Albert Simpson
+person2.firstName = "Simon";
+
+console.log(person2.fullName); // Simon Simpson
+person2.fullName = "Peter";
+
+console.log(person2.firstName); // Simon
+console.log(person2.lastName); // Simpson
 

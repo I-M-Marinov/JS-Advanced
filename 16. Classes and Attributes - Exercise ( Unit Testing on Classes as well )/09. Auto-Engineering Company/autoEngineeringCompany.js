@@ -23,16 +23,16 @@ function autoEngineeringCompany(arr) {
         storage.get(brand).set(model, value + Number(quantity));
     }
 
-    let result = [];
+    let resultString = [];
     
     for ([brand, model] of storage.entries()) {
         let result = `${brand}\n`;
         for (let [name, quantity] of model.entries()) {
             result += `###${name} -> ${quantity}\n`;
         }
-        result.push(result.trim());
+        resultString.push(result.trim());
     }
-    return result.join('\n');
+    return resultString.join('\n');
 }
 
 console.log(autoEngineeringCompany(['Audi | Q7 | 1000',

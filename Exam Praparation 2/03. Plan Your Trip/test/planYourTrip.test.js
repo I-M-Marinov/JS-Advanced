@@ -204,7 +204,7 @@ describe("planYourTrip Tests", function() {
 
         it("If total cost is just under $500", function() {
             let result = planYourTrip.estimateExpenses(50, 9.95);
-            let resultMsg = `The estimated cost for the trip is $497.50, plan accordingly.`;
+            let resultMsg = `The trip is budget-friendly, estimated cost is $497.50.`;
             assert.equal(result, resultMsg);
         });
 

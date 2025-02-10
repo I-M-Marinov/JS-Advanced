@@ -101,6 +101,8 @@ function solve() {
 
             nextButtonElement.addEventListener('click', () => {
 
+            liTicketPreviewElement.remove();
+
             let liTicketPurchaseElement = document.createElement('li');
             liTicketPurchaseElement.setAttribute('class', 'ticket-purchase');
         
@@ -116,9 +118,11 @@ function solve() {
             liTicketPurchaseElement.appendChild(articleTicketPurchaseElement);
             ticketPurchseUlElement.appendChild(liTicketPurchaseElement);
         
-            liTicketPreviewElement.remove();
+
 
             buyButtonElement.addEventListener('click', () => {
+
+                liTicketPurchaseElement.remove();
         
                 let backButtonElement = document.createElement('button');
                 backButtonElement.setAttribute('class', 'back-btn');
@@ -130,7 +134,7 @@ function solve() {
                 divBottomContentElement.appendChild(messageH2Element);
                 divBottomContentElement.appendChild(backButtonElement);
 
-                liTicketPurchaseElement.remove();
+
         
                 backButtonElement.addEventListener('click', () => {
                   window.location.reload();        

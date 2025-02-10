@@ -4,7 +4,6 @@ class BikeRentalService {
         this.location = location;
         this.availableBikes = [];
     }
-
     addBikes(bikes) {
         class Bike {
             constructor(brand, quantity, price) {
@@ -36,7 +35,6 @@ class BikeRentalService {
     
         return `Successfully added ${[...newlyAddedBrands].join(", ")}`;
     }
-    
     rentBikes(selectedBikes) {
         let totalPrice = 0;
         let invalidBrandOrQuantity = false;
@@ -61,7 +59,6 @@ class BikeRentalService {
     
         return `Enjoy your ride! You must pay the following amount $${totalPrice.toFixed(2)}.`;
     }
-
     returnBikes(returnedBikes) {
         let hasInvalidBike = false;
     
@@ -82,8 +79,6 @@ class BikeRentalService {
             ? "Some of the returned bikes are not from our selection."
             : "Thank you for returning!";
     }
-    
-
     revision() {
         let result = [];
         result.push(`Available bikes:`);
@@ -123,8 +118,3 @@ console.log(rentalService.addBikes(["Mountain Bike-5-150", "City Bike-10-100", "
 console.log(rentalService.rentBikes(["Mountain Bike-5", "City Bike-5"]));
 console.log(rentalService.returnBikes(["Mountain Bike-1", "City Bike-3"]));
 console.log(rentalService.revision());
-
-
-
-
-
